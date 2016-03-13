@@ -6,9 +6,7 @@ export default {
         __dirname: false
     },
     entry: {
-        entry: './app/entry.js',
         app: './app/app.js',
-        vendor: ['jquery']
     },
     output: {
         path: './dist',
@@ -28,6 +26,6 @@ export default {
             $: 'jquery',
             jQuery: 'jquery',
             'window.jQuery': 'jquery'
-        })
+        }),
     ]
 }

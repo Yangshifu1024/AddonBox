@@ -1,4 +1,6 @@
-import electron from 'electron'
+'use strict'
+
+var electron = require('electron')
 
 const app = electron.app
 const BrowserWindow = electron.BrowserWindow
