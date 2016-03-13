@@ -2,6 +2,9 @@ import webpack from 'webpack'
 
 export default {
     target: "electron",
+    node: {
+        __dirname: false
+    },
     entry: {
         entry: './app/app.js',
         vendor: ['jquery']
