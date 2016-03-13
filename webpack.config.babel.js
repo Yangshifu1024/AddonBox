@@ -6,7 +6,8 @@ export default {
         __dirname: false
     },
     entry: {
-        entry: './app/app.js',
+        entry: './app/entry.js',
+        app: './app/app.js',
         vendor: ['jquery']
     },
     output: {
@@ -21,5 +22,12 @@ export default {
                 loader:'babel!eslint'
             }
         ]
-    }
+    },
+    plugins: [
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery'
+        })
+    ]
 }
