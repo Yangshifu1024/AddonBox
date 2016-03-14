@@ -7,6 +7,7 @@ import webpackConfig from './webpack.config.babel.js'
 
 gulp.task('clean', () => {
     del(['dist/*']);
+    del(['build']);
 })
 
 gulp.task('copy', () => {
