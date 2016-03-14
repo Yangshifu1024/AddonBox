@@ -35,7 +35,7 @@ export default {
             },
             {
                 test: /\.(woff|woff2)$/,
-                loader: "url?limit=10000&mimetype=application/font-woff&name=./dist/fonts/[hash].[ext]"
+                loader: "url?limit=10000&mimetype=application/font-woff&name=fonts/[hash].[ext]"
             },
             { test: /\.ttf$/,    loader: "file?name=fonts/[hash].[ext]" },
             { test: /\.eot$/,    loader: "file?name=fonts/[hash].[ext]" },
