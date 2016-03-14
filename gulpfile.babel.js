@@ -2,6 +2,7 @@ import gulp from 'gulp'
 import gutil from 'gulp-util'
 import del from 'del'
 import webpack from 'webpack'
+import packager from 'electron-packager'
 import webpackConfig from './webpack.config.babel.js'
 
 gulp.task('clean', function() {
@@ -16,6 +17,24 @@ gulp.task('copy', function() {
 gulp.task('webpack', function() {
     webpack(webpackConfig, function(err, stats) {
        gutil.log(stats.toString({color: true}))
+    })
+})
+
+gulp.task('pack', ['clean', 'copy', 'webpack'], () => {
+    let opts = {
+        name: 'PluginBox',
+        arch: 'x64',
+        dir: './dist',
+        out: './build',
+        platform: 'darwin',
+        version: '0.36.11'
+    }
+    packager(opts, (err, path) => {
+        if (err) {
+            console.error(err)
+        } else {
+            console.log(path[0])
+        }
     })
 })
 

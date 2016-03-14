@@ -2,7 +2,7 @@
   "name": "plugin-box",
   "version": "1.0.0",
   "description": "Plugin manager",
-  "main": "dist/entry.js",
+  "main": "entry.js",
   "babel": {
     "presets": [
       "es2015"
@@ -20,7 +20,6 @@
     "babel-loader": "^6.2.4",
     "babel-plugin-transform-runtime": "^6.6.0",
     "babel-preset-es2015": "^6.6.0",
-    "bootstrap-webpack": "0.0.5",
     "bootswatch": "^3.3.6",
     "css-loader": "^0.23.1",
     "electron-packager": "^5.2.1",
