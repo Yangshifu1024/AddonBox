@@ -9,11 +9,10 @@ export default {
     entry: {
         app: './app/app.js',
         entry: './app/entry.js',
-        vendor: ['jquery', 'bootstrap']
     },
     output: {
         path: './dist',
-        filename: '[name].js'
+        filename: '[name].js',
     },
     module: {
         loaders: [
