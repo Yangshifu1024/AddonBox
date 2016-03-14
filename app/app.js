@@ -1,16 +1,9 @@
-require('bootstrap')
+import 'bootstrap'
 import Vue from 'vue'
-import {modal} from 'vue-strap'
+import App from './component/app.vue'
 
 new Vue({
-    el: '#app',
-    data: {
-        message: 'Hello Vuejs',
-        showCustomModal: false
-    },
-    components: {
-        'modal': modal
-    }
+    el: 'body',
+    components: {App}
 })
-
 

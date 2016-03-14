@@ -1,0 +1,11 @@
+<template>
+    <nav></nav>
+</template>
+
+<script>
+import NavBar from './nav.vue'
+
+export default {
+    components: {Nav}
+}
+</script>

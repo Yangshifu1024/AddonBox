@@ -17,6 +17,10 @@ export default {
     module: {
         loaders: [
             {
+                test: /\.vue$/,
+                loader: 'vue'
+            },
+            {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader:'babel!eslint'

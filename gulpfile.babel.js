@@ -24,7 +24,7 @@ gulp.task('dist', ['clean', 'copy', 'webpack'])
 
 gulp.task('watch', ['dist'], function() {
     gulp.watch(['./app/entry.js', './package.json'], ['copy'])
-    gulp.watch(['./app/**/*.js', './app/**/*.ejs'], ['webpack'])
+    gulp.watch(['./app/**/*.js', './app/**/*.ejs', './app/**/*.vue'], ['webpack'])
 })
 
 gulp.task('default', ['watch'])
