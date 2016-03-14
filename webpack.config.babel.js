@@ -30,8 +30,12 @@ export default {
                 loader: "style!css!less"
             },
             {
+                test: /\.css$/,
+                loader: "style!css!less"
+            },
+            {
                 test: /\.(woff|woff2)$/,
-                loader: "url?limit=10000&mimetype=application/font-woff&name=fonts/[hash].[ext]"
+                loader: "url?limit=10000&mimetype=application/font-woff&name=./dist/fonts/[hash].[ext]"
             },
             { test: /\.ttf$/,    loader: "file?name=fonts/[hash].[ext]" },
             { test: /\.eot$/,    loader: "file?name=fonts/[hash].[ext]" },
@@ -47,7 +51,8 @@ export default {
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
-            'window.jQuery': 'jquery'
+            'window.jQuery': 'jquery',
+            Vue: 'vue'
         }),
     ]
 }
