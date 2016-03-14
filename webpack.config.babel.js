@@ -1,4 +1,5 @@
 import webpack from 'webpack'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
 
 export default {
     target: "electron",
@@ -7,6 +8,8 @@ export default {
     },
     entry: {
         app: './app/app.js',
+        entry: './app/entry.js',
+        vendor: ['jquery', 'bootstrap']
     },
     output: {
         path: './dist',
@@ -22,6 +25,11 @@ export default {
         ]
     },
     plugins: [
+        new HtmlWebpackPlugin({
+            title: 'PluginBox',
+            template: './app/index.ejs',
+            excludeChunks: ['entry']
+        }),
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
