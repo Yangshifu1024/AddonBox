@@ -7,47 +7,41 @@ const Menu = electron.Menu
 const BrowserWindow = electron.BrowserWindow
 
 let mainWindow
-let menuTemplate = [
+
+let template = [
     {
         label: 'PluginBox',
-        subMenu: [
+        submenu: [
             {
-                label: 'About PluginBox',
-                role: 'about'
-            },
+                label: 'Quit',
+                accelerator: 'Command+Q',
+                click: function () {
+                    app.quit();
+                }
+            }
+
+        ]
+    },
+    {
+        label: 'Develop',
+        submenu: [
             {
                 label: 'Reload',
-                accelerator: 'CmdOrCtrl+R',
-                click: (item, focus) => {
-                    if (focus) {
-                        focus.reload();
-                    }
+                accelerator: 'Command+R',
+                click: function () {
+                    BrowserWindow.getFocusedWindow().reloadIgnoringCache();
                 }
             },
             {
-                label: 'Toggle Developer Tools',
-                accelerator: (() => {
-                  if (process.platform == 'darwin')
-                    return 'Alt+Command+I';
-                  else
-                    return 'Ctrl+Shift+I';
-                })(),
-                click: (item, focusedWindow) => {
-                  if (focusedWindow)
-                    focusedWindow.toggleDevTools();
+                label: 'Toggle DevTools',
+                accelerator: 'Alt+Command+I',
+                click: function () {
+                    BrowserWindow.getFocusedWindow().toggleDevTools();
                 }
-            },
-            {
-                label: '退出',
-                accelerator: 'Command+Q',
-                click: () => {app.quit()}
             }
         ]
-    }
+    },
 ]
-
-let menu = Menu.buildFromTemplate(menuTemplate)
-Menu.setApplicationMenu(menu)
 
 
 app.on('ready', function() {
@@ -58,4 +52,6 @@ app.on('ready', function() {
     })
     mainWindow.openDevTools()
     mainWindow.loadURL('file://' + __dirname + '/index.html')
+
+    Menu.setApplicationMenu(Menu.buildFromTemplate(template))
 })
