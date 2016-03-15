@@ -1,6 +1,6 @@
 import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
-
+import ExtractTextPlugin from 'extract-text-webpack-plugin'
 export default {
     target: "electron",
     node: {
@@ -27,19 +27,19 @@ export default {
             },
             {
                 test: /\.less$/,
-                loader: "style!css!less"
+                loader: ExtractTextPlugin.extract('style', 'css')
             },
             {
                 test: /\.css$/,
-                loader: "style!css!less"
+                loader: ExtractTextPlugin.extract('style', 'css!less')
             },
             {
-                test: /\.(woff|woff2)$/,
+                test: /\.(woff|woff2)\??.*$/,
                 loader: "url?limit=10000&mimetype=application/font-woff&name=fonts/[name].[ext]"
             },
-            { test: /\.ttf$/,    loader: "file?name=fonts/[name].[ext]" },
-            { test: /\.eot$/,    loader: "file?name=fonts/[name].[ext]" },
-            { test: /\.svg$/,    loader: "file?name=fonts/[name].[ext]" }
+            { test: /\.ttf\??.*$/,    loader: "file?name=fonts/[name].[ext]" },
+            { test: /\.eot\??.*$/,    loader: "file?name=fonts/[name].[ext]" },
+            { test: /\.svg\??.*$/,    loader: "file?name=fonts/[name].[ext]" }
         ]
     },
     plugins: [
@@ -54,5 +54,8 @@ export default {
             'window.jQuery': 'jquery',
             Vue: 'vue'
         }),
+        new ExtractTextPlugin('[name].css', {
+            allChunks: true
+        })
     ]
 }
