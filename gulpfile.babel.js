@@ -17,7 +17,13 @@ gulp.task('copy', () => {
 
 gulp.task('webpack', () => {
     webpack(webpackConfig, (err, stats) => {
-       gutil.log(stats.toString({color: true}))
+        gutil.log(stats.toString({
+            chunks: false,
+            assets: true,
+            colors: true,
+            version: false,
+            hash: false,
+        }))
     })
 })
 

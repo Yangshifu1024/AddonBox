@@ -10,7 +10,8 @@ let mainWindow
 app.on('ready', function() {
     mainWindow = new BrowserWindow({
         width: 960,
-        height: 720
+        height: 720,
+        titleBarStyle: 'hidden'
     })
     mainWindow.openDevTools()
     mainWindow.loadURL('file://' + __dirname + '/index.html')
