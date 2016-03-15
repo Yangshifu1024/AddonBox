@@ -13,10 +13,20 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-info-sign"></span></a></li>
+        <li><a href="#" v-on:click="showAbout"><span class="glyphicon glyphicon-info-sign"></span></a></li>
         <li><a href="#"><span class="glyphicon glyphicon-cog"></span></a></li>
       </ul>
     </div>
   </div>
 </nav>
 </template>
+
+<script>
+export default {
+    methods: {
+        showAbout: (e) => {
+            $('#mdlAbout').modal('show')
+        }
+    }
+}
+</script>
