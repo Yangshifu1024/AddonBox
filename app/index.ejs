@@ -1,9 +1,47 @@
 <html>
-  <head>
-    <title><%= htmlWebpackPlugin.options.title %></title>
-    <meta charset="utf-8"/>
-  </head>
-  <body style="-webkit-app-region: drag">
-  </body>
+    <head>
+        <title><%= htmlWebpackPlugin.options.title %></title>
+        <meta charset="utf-8"/>
+    </head>
+    <body style="-webkit-app-region: drag">
+        <nav class="navbar navbar-inverse" style="padding-top: 21px;">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="navbar-brand">PluginBox</div>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" @click="isShowAbout = !isShowAbout">
+                                <span class="glyphicon glyphicon-info-sign"></span>
+                            </a>
+                        </li>
+                        <li><a href="#"><span class="glyphicon glyphicon-cog"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <addons></addons>
+        <modal :show.sync="isShowAbout" :backdrop="static" :small="true" effect="zoom">
+            <div slot="modal-header" class="modal-header">
+                <h4 class="modal-title">About</h4>
+            </div>
+            <div slot="modal-body" class="modal-body">
+                <p>PluginBox at Github: <a>Link</a></p>
+                <p>My Blog <a>Link</a></p>
+            </div>
+            <div slot="modal-footer" class="modal-footer">
+                <button type="button" class="btn btn-success" @click='isShowAbout = false'>Close</button>
+            </div>
+        </modal>
+
+    </body>
 </html>
 

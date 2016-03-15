@@ -23,11 +23,11 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "antd": "^0.12.10",
     "babel-eslint": "^5.0.0",
     "babel-loader": "^6.2.4",
     "babel-plugin-transform-runtime": "^6.6.0",
     "babel-preset-es2015": "^6.6.0",
+    "bootswatch": "^3.3.6",
     "css-loader": "^0.23.1",
     "electron-packager": "^5.2.1",
     "electron-prebuilt": "^0.37.2",
@@ -43,10 +43,15 @@
     "imports-loader": "^0.6.5",
     "less": "^2.6.1",
     "less-loader": "^2.2.2",
-    "react": "^0.14.7",
-    "react-dom": "^0.14.7",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
+    "vue": "^1.0.17",
+    "vue-animate-css": "^1.0.0",
+    "vue-hot-reload-api": "^1.3.2",
+    "vue-html-loader": "^1.2.0",
+    "vue-loader": "^8.2.0",
+    "vue-strap": "^1.0.7",
+    "vue-style-loader": "^1.0.0",
     "webpack": "^1.12.14"
   }
 }

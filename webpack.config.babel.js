@@ -27,11 +27,11 @@ export default {
             },
             {
                 test: /\.less$/,
-                loader: ExtractTextPlugin.extract('style', 'css')
+                loader: ExtractTextPlugin.extract('style', 'css!less')
             },
             {
                 test: /\.css$/,
-                loader: ExtractTextPlugin.extract('style', 'css!less')
+                loader: ExtractTextPlugin.extract('style', 'css')
             },
             {
                 test: /\.(woff|woff2)\??.*$/,
