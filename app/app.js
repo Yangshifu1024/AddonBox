@@ -18,6 +18,7 @@ new Vue({
     methods: {
     },
     data: {
-        isShowAbout: false
+        isShowAbout: false,
+        isShowSetting: false,
     }
 })
