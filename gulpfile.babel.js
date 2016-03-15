@@ -13,6 +13,7 @@ gulp.task('clean', () => {
 gulp.task('copy', () => {
     gulp.src('./app/entry.js').pipe(gulp.dest('./dist'))
     gulp.src('./package.json').pipe(gulp.dest('./dist'))
+    gulp.src('./app/assets/**/*.*').pipe(gulp.dest('./dist/assets/'))
 })
 
 gulp.task('webpack', () => {
@@ -48,7 +49,7 @@ gulp.task('pack', ['clean', 'copy', 'webpack'], () => {
 gulp.task('dist', ['clean', 'copy', 'webpack'])
 
 gulp.task('watch', ['dist'], () => {
-    gulp.watch(['./app/entry.js', './package.json'], ['copy'])
+    gulp.watch(['./app/entry.js', './package.json', './app/assets/**/*.*'], ['copy'])
     gulp.watch(['./app/**/*.js', './app/**/*.ejs', './app/**/*.vue', './app/**/*.less'], ['webpack'])
 })
 
