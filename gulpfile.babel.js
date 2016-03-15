@@ -34,7 +34,7 @@ gulp.task('pack', ['clean', 'copy', 'webpack'], () => {
         dir: './dist',
         out: './build',
         platform: 'darwin',
-        version: '0.36.11'
+        version: '0.37.2'
     }
     packager(opts, (err, path) => {
         if (err) {
