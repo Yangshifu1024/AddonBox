@@ -6,15 +6,18 @@ import 'vue-animate-css'
 import {modal} from 'vue-strap'
 
 import './style/app.less'
+import NavBar from './component/nav.vue'
 import AddonList from './component/addonList.vue'
 import ModalAbout from './component/mdlAbout.vue'
 import ModalSetting from './component/mdlSetting.vue'
 
-let vm = new Vue({
+Vue.config.debug = true
+
+new Vue({
     el: 'body',
-    props: [],
     components: {
         modal,
+        NavBar,
         AddonList,
         ModalAbout,
         ModalSetting
