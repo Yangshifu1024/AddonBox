@@ -11,8 +11,6 @@ import AddonList from './component/addonList.vue'
 import ModalAbout from './component/mdlAbout.vue'
 import ModalSetting from './component/mdlSetting.vue'
 
-import BigFoot from './provider/bigFoot.js'
-
 Vue.config.debug = true
 
 new Vue({
@@ -28,6 +26,12 @@ new Vue({
     data: {
         isShowAbout: false,
         isShowSetting: false,
+        workerCount: 5,
+    },
+    ready() {
+        this.$watch('workerCount', (val) => {
+
+        })
     }
 })
 

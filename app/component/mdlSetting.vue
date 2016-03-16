@@ -6,7 +6,7 @@
         <div slot="modal-body" class="modal-body">
             <div class="form-horizontal">
                 <div class="form-group">
-                    <label for="cbAutoUpdate" class="col-xs-3 control-label"></label>
+                    <label for="cbAutoUpdate" class="col-xs-3 control-label">自动更新：</label>
                     <div class="col-xs-8">
                         <div class="checkbox">
                             <label>
@@ -16,9 +16,26 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="filePath" class="col-xs-3 control-label"></label>
+                    <label for="txtWowPath" class="col-xs-3 control-label">设置目录：</label>
                     <div class="col-xs-6">
-                        <input type="text" class="form-control" placeholder="选择 wow 所在目录">
+                        <input type="text" id="txtWowPath" class="form-control" placeholder="选择 wow 所在目录">
+                    </div>
+                    <div class="col-xs-3">
+                        <button class="btn btn-warning">选择</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="filePath" class="col-xs-3 control-label">同时下载数：</label>
+                    <div class="col-xs-2">
+                        <v-select placeholder="workerCount" :value.sync="workerCount">
+                            <v-option value="5">5</v-option>
+                            <v-option value="10">10</v-option>
+                            <v-option value="15">15</v-option>
+                            <v-option value="20">20</v-option>
+                        </v-select>
+                    </div>
+                    <div class="col-xs-6">
+                        <span class="help-block">程序同时下载数，设置过高可能导致错误。</span>
                     </div>
                 </div>
             </div>
@@ -30,13 +47,16 @@
 </template>
 
 <script>
-    import {modal} from 'vue-strap'
+    import {modal, select, option} from 'vue-strap'
     export default {
         props: {
             show: {
                 type: Boolean,
                 twoWay: true,
             },
+            workerCount: {
+                twoWay: true,
+            }
         },
         methods: {
             close() {
@@ -44,9 +64,14 @@
             }
         },
         ready() {
+            if (!this.workerCount) {
+                this.workerCount = 10
+            }
         },
         components: {
-            modal
+            modal,
+            'v-select': select,
+            'v-option': option
         }
     }
 
