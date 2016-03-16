@@ -15,7 +15,7 @@ let template = [
             {
                 label: 'Quit',
                 accelerator: 'Command+Q',
-                click: function () {
+                click: () => {
                     app.quit();
                 }
             }
@@ -28,14 +28,14 @@ let template = [
             {
                 label: 'Reload',
                 accelerator: 'Command+R',
-                click: function () {
+                click: () => {
                     BrowserWindow.getFocusedWindow().reloadIgnoringCache();
                 }
             },
             {
                 label: 'Toggle DevTools',
                 accelerator: 'Alt+Command+I',
-                click: function () {
+                click: () => {
                     BrowserWindow.getFocusedWindow().toggleDevTools();
                 }
             }
@@ -43,8 +43,7 @@ let template = [
     },
 ]
 
-
-app.on('ready', function() {
+function createWindow() {
     mainWindow = new BrowserWindow({
         width: 960,
         height: 720,
@@ -53,5 +52,20 @@ app.on('ready', function() {
     mainWindow.openDevTools()
     mainWindow.loadURL('file://' + __dirname + '/index.html')
 
+    mainWindow.on('closed', () => {
+        mainWindow = null;
+    })
+
     Menu.setApplicationMenu(Menu.buildFromTemplate(template))
+}
+
+
+app.on('ready', () => {
+    createWindow()
+})
+
+app.on('activate', () => {
+    if (mainWindow == null) {
+        createWindow()
+    }
 })

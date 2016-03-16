@@ -1,5 +1,5 @@
 {
-  "name": "plugin-box",
+  "name": "PluginBox",
   "version": "1.0.0",
   "description": "Plugin manager",
   "main": "entry.js",
