@@ -1,7 +1,7 @@
 <template>
     <modal :show.sync="show" effect="zoom">
         <div slot="modal-header" class="modal-header">
-            <h4 class="modal-title">关于 {{ appName }}</h4>
+            <h4 class="modal-title">{{ $t('label.About' )}} {{ $t('label.PluginBox') }}</h4>
         </div>
         <div slot="modal-body" class="modal-body">
             <div class="row">
@@ -11,15 +11,14 @@
             </div>
         </div>
         <div slot="modal-footer" class="modal-footer">
-            <button type="button" class="btn btn-success" @click='close'>关闭</button>
+            <button type="button" class="btn btn-success" @click='close'>{{ $t('button.Ok') }}</button>
         </div>
     </modal>
 </template>
 
 <script>
     import {modal} from 'vue-strap'
-    import electron from 'electron'
-    const remote = electron.remote
+
     export default {
         props: {
             show: {
@@ -39,7 +38,6 @@
         },
         data: () => {
             return {
-                appName: remote.app.getName()
             }
         }
     }

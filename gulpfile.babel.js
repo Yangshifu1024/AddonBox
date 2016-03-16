@@ -50,7 +50,7 @@ gulp.task('dist', ['clean', 'copy', 'webpack'])
 
 gulp.task('watch', ['dist'], () => {
     gulp.watch(['./app/entry.js', './package.json', './app/assets/**/*.*'], ['copy'])
-    gulp.watch(['./app/**/*.js', './app/**/*.ejs', './app/**/*.vue', './app/**/*.less'], ['webpack'])
+    gulp.watch(['./app/**/*.js', './app/**/*.ejs', './app/**/*.vue', './app/**/*.less', './app/**/*.json'], ['webpack'])
 })
 
 gulp.task('default', ['watch'])

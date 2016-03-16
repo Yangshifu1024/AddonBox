@@ -8,6 +8,13 @@ import NavBar from './component/nav.vue'
 import AddonList from './component/addonList.vue'
 import ModalAbout from './component/mdlAbout.vue'
 import ModalSetting from './component/mdlSetting.vue'
+import locales from './library/i18n.js'
+import VueI18n from 'vue-i18n'
+
+Vue.use(VueI18n, {
+    lang: 'en',
+    locales: locales
+})
 
 Vue.config.debug = true
 

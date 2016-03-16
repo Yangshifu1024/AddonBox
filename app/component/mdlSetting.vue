@@ -1,31 +1,31 @@
 <template>
     <modal :show.sync="show" :backdrop="static" effect="zoom">
         <div slot="modal-header" class="modal-header">
-            <h4 class="modal-title">设置</h4>
+            <h4 class="modal-title">{{ $t('label.Setting') }}</h4>
         </div>
         <div slot="modal-body" class="modal-body">
             <div class="form-horizontal">
                 <div class="form-group">
-                    <label for="cbAutoUpdate" class="col-xs-3 control-label">自动更新：</label>
+                    <label for="cbAutoUpdate" class="col-xs-3 control-label">{{ $t('Modals.Setting.AutoUpdate') }}：</label>
                     <div class="col-xs-8">
                         <div class="checkbox">
                             <label>
-                                <input v-model="autoUpdate" type="checkbox" id="cbAutoUpdate"> 程序启动时自动更新
+                                <input v-model="autoUpdate" type="checkbox" id="cbAutoUpdate"> {{ $t('Modals.Setting.HelpAutoUpdate') }}
                           </label>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="txtWowPath" class="col-xs-3 control-label">设置目录：</label>
+                    <label for="txtWowPath" class="col-xs-3 control-label">{{ $t('Modals.Setting.DirChoose') }}：</label>
                     <div class="col-xs-6">
-                        <input type="text" v-model="wowPath" id="txtWowPath" class="form-control" placeholder="选择 wow 所在目录">
+                        <input type="text" v-model="wowPath" id="txtWowPath" class="form-control" placeholder="{{ $t('Modals.Setting.HelpDirChoose') }}">
                     </div>
                     <div class="col-xs-3">
-                        <button class="btn btn-warning" @click="dirChoose">选择</button>
+                        <button class="btn btn-warning" @click="dirChoose">{{ $t('button.Choose') }}</button>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="filePath" class="col-xs-3 control-label">同时下载数：</label>
+                    <label for="filePath" class="col-xs-3 control-label">{{ $t('Modals.Setting.Concurrency') }}：</label>
                     <div class="col-xs-2">
                         <v-select placeholder="workerCount" :value.sync="workerCount">
                             <v-option value="5">5</v-option>
@@ -35,13 +35,13 @@
                         </v-select>
                     </div>
                     <div class="col-xs-6">
-                        <span class="help-block">程序同时下载数，设置过高可能导致错误。</span>
+                        <span class="help-block">{{ $t('Modals.Setting.HelpConcurrency') }}</span>
                     </div>
                 </div>
             </div>
         </div>
         <div slot="modal-footer" class="modal-footer">
-            <button type="button" class="btn btn-success" @click='close'>确定</button>
+            <button type="button" class="btn btn-success" @click='close'>{{ $t('button.Ok') }}</button>
         </div>
     </modal>
 </template>
@@ -80,11 +80,11 @@
             },
             dirChoose() {
                 dialog.showOpenDialog({
-                    title: '选择 WOW 所在目录：',
+                    title: Vue.t('Modals.Setting.HelpDirChoose'),
                     properties: ['openDirectory']
                 }, (paths) => {
                     if (typeof paths == 'undefined') {
-                        dialog.showErrorBox('警告', '必须选择一个目录')
+                        dialog.showErrorBox(Vue.t('label.Warning'), Vue.t('Modals.Setting.ErrorDirChoose'))
                     } else {
                         this.wowPath = paths.shift()
                     }

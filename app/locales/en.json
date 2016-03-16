@@ -1,0 +1,26 @@
+{
+    "label": {
+      "About": "About",
+      "PluginBox": "PluginBox",
+      "Search": "Search",
+      "Setting": "Setting",
+      "Warning": "Warning"
+    },
+    "button": {
+      "Ok": "Ok",
+      "Close": "Close",
+      "Update": "Update",
+      "Choose": "Choose"
+    },
+    "Modals": {
+      "Setting": {
+        "AutoUpdate": "Auto update",
+        "DirChoose": "Wow path",
+        "Concurrency": "Concurrency",
+        "HelpAutoUpdate": "Auto update on app start.",
+        "HelpDirChoose": "Choose your WOW path.",
+        "HelpConcurrency": "Errors may occur when it set too high.",
+        "ErrorDirChoose": "You must choose a valid path to WOW!"
+      }
+    }
+}

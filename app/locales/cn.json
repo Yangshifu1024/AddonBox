@@ -1,0 +1,26 @@
+{
+    "label": {
+      "About": "关于",
+      "PluginBox": "插件盒子",
+      "Search": "搜索",
+      "Setting": "设置",
+      "Warning": "警告"
+    },
+    "button": {
+      "Ok": "确定",
+      "Close": "关闭",
+      "Update": "更新",
+      "Choose": "选择"
+    },
+    "Modals": {
+      "Setting": {
+        "AutoUpdate": "自动更新",
+        "DirChoose": "WOW 目录",
+        "Concurrency": "同时下载数",
+        "HelpAutoUpdate": "程序启动时自动更新。",
+        "HelpDirChoose": "选择 WOW 目录。",
+        "HelpConcurrency": "设置过高可能会发生错误。",
+        "ErrorDirChoose": "必须选择一个有效的 WOW 目录！"
+      }
+    }
+}
