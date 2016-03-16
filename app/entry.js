@@ -59,6 +59,19 @@ function createWindow() {
     Menu.setApplicationMenu(Menu.buildFromTemplate(template))
 }
 
+let shouldQuit = app.makeSingleInstance((cmd, dir) => {
+    if (mainWindow) {
+        if (mainWindow.isMinimized()) mainWindow.restore()
+        mainWindow.focus()
+    } else {
+        createWindow()
+    }
+})
+
+if (shouldQuit) {
+    app.quit()
+}
+
 
 app.on('ready', () => {
     createWindow()
