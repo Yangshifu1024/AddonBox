@@ -1,7 +1,7 @@
 <template>
     <modal :show.sync="show" :backdrop="static" effect="zoom">
         <div slot="modal-header" class="modal-header">
-            <h4 class="modal-title">Setting</h4>
+            <h4 class="modal-title">设置</h4>
         </div>
         <div slot="modal-body" class="modal-body">
             <div class="form-horizontal">
@@ -10,7 +10,7 @@
                     <div class="col-xs-8">
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" id="cbAutoUpdate"> Auto update when app started if checked.
+                                <input type="checkbox" id="cbAutoUpdate"> 程序启动时自动更新
                           </label>
                         </div>
                     </div>
@@ -18,13 +18,13 @@
                 <div class="form-group">
                     <label for="filePath" class="col-xs-3 control-label"></label>
                     <div class="col-xs-6">
-                        <input type="text" class="form-control" placeholder="Choose the path to your WOW.">
+                        <input type="text" class="form-control" placeholder="选择 wow 所在目录">
                     </div>
                 </div>
             </div>
         </div>
         <div slot="modal-footer" class="modal-footer">
-            <button type="button" class="btn btn-success" @click='close'>Close</button>
+            <button type="button" class="btn btn-success" @click='close'>确定</button>
         </div>
     </modal>
 </template>

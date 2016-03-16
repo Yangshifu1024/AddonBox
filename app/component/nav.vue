@@ -2,13 +2,13 @@
     <nav class="navbar navbar-inverse titlebar">
         <div class="container-fluid">
             <div class="navbar-header">
-                <div class="navbar-brand">PluginBox</div>
+                <div class="navbar-brand">{{ appName }}</div>
             </div>
 
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <form class="navbar-form navbar-left" role="search">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search" v-model="filterKey">
+                        <input type="text" class="form-control" placeholder="搜索" v-model="filterKey">
                     </div>
                 </form>
                 <ul class="nav navbar-nav navbar-right">
@@ -29,6 +29,9 @@
 </template>
 
 <script>
+    import electron from 'electron'
+    const remote = electron.remote
+    import {tooltip} from 'vue-strap'
     export default {
         props: {
             isShowAbout: {
@@ -38,12 +41,19 @@
             isShowSetting: {
                 type: Boolean,
                 twoWay: true
+            },
+            filterKey: {
+                type: String,
+                twoWay: true
             }
         },
-        ready() {
-            this.$watch('isShowAbout', (val) => {
-                console.log('isShowAbout: ' + val)
-            })
+        components: {
+            tooltip
+        },
+        data: () => {
+            return {
+                appName: remote.app.getName()
+            }
         }
     }
 </script>
