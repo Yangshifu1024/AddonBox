@@ -1,23 +1,18 @@
+'use strict'
+
 export default class AddonFile {
-    constructor() {}
+    path = ''
+    sum = ''
 
-    set path(path) {
-        this._path = path
-    }
-
-    get path() {
-        return this._path
-    }
-
-    set sum(sum) {
-        this._sum = sum
-    }
-
-    get sum() {
-        return this._sum
+    constructor(path, sum) {
+        this.path = path
+        this.sum = sum
     }
 
     validate() {
-        return true
+        if (this.sum) {
+            return true
+        }
+        return false
     }
 }
