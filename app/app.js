@@ -9,14 +9,12 @@ import AddonList from './component/addonList.vue'
 
 new Vue({
     el: 'body',
-    props: [
-    ],
+    props: [],
     components: {
         'modal': modal,
         'addons': AddonList,
     },
-    methods: {
-    },
+    methods: {},
     data: {
         isShowAbout: false,
         isShowSetting: false,

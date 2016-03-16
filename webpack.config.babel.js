@@ -23,7 +23,7 @@ export default {
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader:'babel!eslint'
+                loader: 'babel!eslint'
             },
             {
                 test: /\.less$/,
@@ -37,9 +37,18 @@ export default {
                 test: /\.(woff|woff2)\??.*$/,
                 loader: "url?limit=10000&mimetype=application/font-woff&name=fonts/[name].[ext]"
             },
-            { test: /\.ttf\??.*$/,    loader: "file?name=fonts/[name].[ext]" },
-            { test: /\.eot\??.*$/,    loader: "file?name=fonts/[name].[ext]" },
-            { test: /\.svg\??.*$/,    loader: "file?name=fonts/[name].[ext]" }
+            {
+                test: /\.ttf\??.*$/,
+                loader: "file?name=fonts/[name].[ext]"
+            },
+            {
+                test: /\.eot\??.*$/,
+                loader: "file?name=fonts/[name].[ext]"
+            },
+            {
+                test: /\.svg\??.*$/,
+                loader: "file?name=fonts/[name].[ext]"
+            }
         ]
     },
     plugins: [
