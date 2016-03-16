@@ -27,10 +27,18 @@ new Vue({
         isShowAbout: false,
         isShowSetting: false,
         workerCount: 5,
+        wowPath: null,
+        autoUpdate: false,
     },
     ready() {
         this.$watch('workerCount', (val) => {
-
+            console.log('workerCount: ' + val)
+        })
+        this.$watch('wowPath', (val) => {
+            console.log('wowPath: ' + val)
+        })
+        this.$watch('autoUpdate', (val) => {
+            console.log('autoUpdate: ' + val)
         })
     }
 })

@@ -10,7 +10,7 @@
                     <div class="col-xs-8">
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" id="cbAutoUpdate"> 程序启动时自动更新
+                                <input v-model="autoUpdate" type="checkbox" id="cbAutoUpdate"> 程序启动时自动更新
                           </label>
                         </div>
                     </div>
@@ -18,10 +18,10 @@
                 <div class="form-group">
                     <label for="txtWowPath" class="col-xs-3 control-label">设置目录：</label>
                     <div class="col-xs-6">
-                        <input type="text" id="txtWowPath" class="form-control" placeholder="选择 wow 所在目录">
+                        <input type="text" v-model="wowPath" id="txtWowPath" class="form-control" placeholder="选择 wow 所在目录">
                     </div>
                     <div class="col-xs-3">
-                        <button class="btn btn-warning">选择</button>
+                        <button class="btn btn-warning" @click="dirChoose">选择</button>
                     </div>
                 </div>
                 <div class="form-group">
@@ -47,7 +47,16 @@
 </template>
 
 <script>
-    import {modal, select, option} from 'vue-strap'
+    import {
+        modal,
+        select,
+        option
+    } from 'vue-strap'
+    import electron from 'electron'
+    const remote = electron.remote
+    const app = remote.app
+    const dialog = remote.dialog
+
     export default {
         props: {
             show: {
@@ -56,11 +65,30 @@
             },
             workerCount: {
                 twoWay: true,
-            }
+            },
+            wowPath: {
+                twoWay: true,
+            },
+            autoUpdate: {
+                type: Boolean,
+                twoWay: true,
+            },
         },
         methods: {
             close() {
                 this.show = false
+            },
+            dirChoose() {
+                dialog.showOpenDialog({
+                    title: '选择 WOW 所在目录：',
+                    properties: ['openDirectory']
+                }, (paths) => {
+                    if (typeof paths == 'undefined') {
+                        dialog.showErrorBox('警告', '必须选择一个目录')
+                    } else {
+                        this.wowPath = paths.shift()
+                    }
+                })
             }
         },
         ready() {

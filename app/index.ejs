@@ -20,7 +20,13 @@
         </footer>
     </div>
     <modal-about :show.sync="isShowAbout"></modal-about>
-    <modal-setting :show.sync="isShowSetting" :worker-count.sync="workerCount"></modal-setting>
+    <modal-setting
+        :show.sync="isShowSetting"
+        :worker-count.sync="workerCount"
+        :auto-update.sync="autoUpdate"
+        :wow-path.sync="wowPath"
+        >
+    </modal-setting>
 </body>
 
 </html>
