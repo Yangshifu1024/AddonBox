@@ -1,12 +1,12 @@
 {
-    "label": {
+    "Label": {
       "About": "关于",
       "PluginBox": "插件盒子",
       "Search": "搜索",
       "Setting": "设置",
       "Warning": "警告"
     },
-    "button": {
+    "Button": {
       "Ok": "确定",
       "Close": "关闭",
       "Update": "更新",

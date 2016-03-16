@@ -1,12 +1,12 @@
 {
-    "label": {
+    "Label": {
       "About": "About",
       "PluginBox": "PluginBox",
       "Search": "Search",
       "Setting": "Setting",
       "Warning": "Warning"
     },
-    "button": {
+    "Button": {
       "Ok": "Ok",
       "Close": "Close",
       "Update": "Update",

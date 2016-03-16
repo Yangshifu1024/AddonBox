@@ -1,7 +1,7 @@
 <template>
     <modal :show.sync="show" :backdrop="static" effect="zoom">
         <div slot="modal-header" class="modal-header">
-            <h4 class="modal-title">{{ $t('label.Setting') }}</h4>
+            <h4 class="modal-title">{{ $t('Label.Setting') }}</h4>
         </div>
         <div slot="modal-body" class="modal-body">
             <div class="form-horizontal">
@@ -21,7 +21,7 @@
                         <input type="text" v-model="wowPath" id="txtWowPath" class="form-control" placeholder="{{ $t('Modals.Setting.HelpDirChoose') }}">
                     </div>
                     <div class="col-xs-3">
-                        <button class="btn btn-warning" @click="dirChoose">{{ $t('button.Choose') }}</button>
+                        <button class="btn btn-warning" @click="dirChoose">{{ $t('Button.Choose') }}</button>
                     </div>
                 </div>
                 <div class="form-group">
@@ -41,7 +41,7 @@
             </div>
         </div>
         <div slot="modal-footer" class="modal-footer">
-            <button type="button" class="btn btn-success" @click='close'>{{ $t('button.Ok') }}</button>
+            <button type="button" class="btn btn-success" @click='close'>{{ $t('Button.Ok') }}</button>
         </div>
     </modal>
 </template>
@@ -84,7 +84,7 @@
                     properties: ['openDirectory']
                 }, (paths) => {
                     if (typeof paths == 'undefined') {
-                        dialog.showErrorBox(Vue.t('label.Warning'), Vue.t('Modals.Setting.ErrorDirChoose'))
+                        dialog.showErrorBox(Vue.t('Label.Warning'), Vue.t('Modals.Setting.ErrorDirChoose'))
                     } else {
                         this.wowPath = paths.shift()
                     }
