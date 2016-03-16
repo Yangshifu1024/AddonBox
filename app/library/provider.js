@@ -1,10 +1,11 @@
 'use strict'
 
 export default class Provider {
-    constructor(name, updateUrl, downUrl) {
-        this.name = name
-        this.updateUrl = updateUrl
-        this.downUrl = downUrl
+    constructor(name, updateUrl, downUrl, indexFile) {
+        Provider.name = name
+        Provider.updateUrl = updateUrl
+        Provider.downUrl = downUrl
+        Provider.indexFile = indexFile
     }
 }
 

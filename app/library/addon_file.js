@@ -1,9 +1,6 @@
 'use strict'
 
 export default class AddonFile {
-    path = ''
-    sum = ''
-
     constructor(path, sum) {
         this.path = path
         this.sum = sum
