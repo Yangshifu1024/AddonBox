@@ -18,7 +18,11 @@ export default {
         loaders: [
             {
                 test: /\.vue$/,
-                loader: 'vue-loader'
+                loader: 'vue'
+            },
+            {
+                test: /\.json$/,
+                loader: 'json'
             },
             {
                 test: /\.js$/,
