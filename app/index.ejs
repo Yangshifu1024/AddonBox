@@ -35,7 +35,7 @@
             </div>
         </div>
     </nav>
-    <addons></addons>
+    <addon-list></addon-list>
     <div class="container-fluid">
         <footer class="footer">
             <div class="row">
@@ -45,49 +45,8 @@
             </div>
         </footer>
     </div>
-    <modal :show.sync="isShowAbout" effect="zoom">
-        <div slot="modal-header" class="modal-header">
-            <h4 class="modal-title">About</h4>
-        </div>
-        <div slot="modal-body" class="modal-body">
-            <div class="row">
-                <div class="col-xs-6 col-xs-offset-3 centered">
-                    <img v-animation animate="tada" src="./assets/avatar_2016.jpg" width="155" height="155" />
-                </div>
-            </div>
-        </div>
-        <div slot="modal-footer" class="modal-footer">
-            <button type="button" class="btn btn-success" @click='isShowAbout = false'>Close</button>
-        </div>
-    </modal>
-    <modal :show.sync="isShowSetting" :backdrop="static" effect="zoom">
-        <div slot="modal-header" class="modal-header">
-            <h4 class="modal-title">Setting</h4>
-        </div>
-        <div slot="modal-body" class="modal-body">
-            <div class="form-horizontal">
-                <div class="form-group">
-                    <label for="cbAutoUpdate" class="col-xs-3 control-label"></label>
-                    <div class="col-xs-8">
-                        <div class="checkbox">
-                            <label>
-                <input type="checkbox" id="cbAutoUpdate"> Auto update when app started if checked.
-              </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="filePath" class="col-xs-3 control-label"></label>
-                    <div class="col-xs-6">
-                        <input type="text" class="form-control" placeholder="Choose the path to your WOW.">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div slot="modal-footer" class="modal-footer">
-            <button type="button" class="btn btn-success" @click='isShowSetting = false'>Close</button>
-        </div>
-    </modal>
+    <modal-about :show.sync="isShowAbout"></modal-about>
+    <modal-setting :show.sync="isShowSetting"></modal-setting>
 </body>
 
 </html>
