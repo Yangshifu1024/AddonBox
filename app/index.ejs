@@ -9,12 +9,12 @@
 
 <body>
     <nav-bar :is-show-about.sync="isShowAbout" :is-show-setting.sync="isShowSetting"></nav-bar>
-    <addon-list></addon-list>
+    <addon-list :data="addons" :columns="columns"></addon-list>
     <div class="container-fluid">
         <footer class="footer">
             <div class="row">
                 <div class="col-xs-2 col-xs-offset-10">
-                    <button class="btn btn-lg btn-success">{{ $t('Button.Update') }}</button>
+                    <button :disabled="!isReadyToUpdate" class="btn btn-lg btn-success">{{ $t('Button.Update') }}</button>
                 </div>
             </div>
         </footer>
@@ -30,3 +30,4 @@
 </body>
 
 </html>
+

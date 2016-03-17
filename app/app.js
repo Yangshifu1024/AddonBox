@@ -11,6 +11,9 @@ import ModalSetting from './component/mdlSetting.vue'
 import locales from './library/i18n.js'
 import VueI18n from 'vue-i18n'
 import setting from './library/setting.js'
+import BigFoot from './provider/bigFoot.js'
+import axios from 'axios'
+import * as xml2js from 'xml2js'
 
 Vue.use(VueI18n, {
     lang: 'en',
@@ -31,9 +34,30 @@ new Vue({
     data: {
         isShowAbout: false,
         isShowSetting: false,
+        isReadyToUpdate: false,
         workerCount: setting.settings.workerCount,
         wowPath: setting.settings.wowPath,
         autoUpdate: setting.settings.autoUpdate,
+        columns: ['Name', 'Title', 'Desc', 'Author', 'Version'],
+        addons: [],
     },
+    ready() {
+        let progress = (size, total) => {
+            console.log(`Progress: size: ${size} - total: ${total}`)
+        }
+        axios.progress = progress
+        axios.get(BigFoot.indexFileUrl).then(resp => {
+            if (resp.status === 200) {
+                this.isReadyToUpdate = true
+                xml2js.parseString(resp.data, (err, ret) => {
+                    ret.AddOns.AddOn.forEach((value, index) => {
+                        this.addons.push(value.$)
+                    })
+                })
+            }
+        }).catch(err => {
+            console.log(err)
+        })
+    }
 })
 
