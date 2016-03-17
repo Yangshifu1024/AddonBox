@@ -36,7 +36,8 @@ gulp.task('pack', ['clean', 'copy', 'webpack'], () => {
         dir: './dist',
         out: './build',
         platform: 'darwin',
-        version: '0.37.2'
+        version: '0.37.2',
+        icon: './app/assets/logo.icns',
     }
     packager(opts, (err, path) => {
         if (err) {
