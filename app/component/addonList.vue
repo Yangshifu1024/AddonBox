@@ -14,6 +14,7 @@
         data () {
             return {
                 options: {
+                    skin: 'table-striped table-bordered table-hover',
                     filterByColumn: false,
                     columns:['name', 'title', 'version'],
                     texts: {
