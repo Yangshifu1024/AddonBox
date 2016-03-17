@@ -1,3 +1,4 @@
+import {exec} from 'child_process'
 import gulp from 'gulp'
 import gutil from 'gulp-util'
 import del from 'del'
@@ -41,7 +42,7 @@ gulp.task('pack', ['clean', 'copy', 'webpack'], () => {
         if (err) {
             console.error(err)
         } else {
-            console.log(path[0])
+            exec('open '+ path[0])
         }
     })
 })
