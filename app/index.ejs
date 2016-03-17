@@ -8,19 +8,19 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        <nav-bar :is-show-about.sync="isShowAbout" :is-show-setting.sync="isShowSetting"></nav-bar>
+    <nav-bar :is-show-about.sync="isShowAbout" :is-show-setting.sync="isShowSetting"></nav-bar>
+    <div class="container-fluid" style="margin-top: 105px; width: 95%;">
         <div class="row">
-            <addon-list :data="addons" :columns="columns"></addon-list>
+            <addon-list :data.sync="addons"></addon-list>
         </div>
-        <footer class="footer">
-            <div class="row">
-                <div class="col-xs-2 col-xs-offset-10">
-                    <button :disabled="!isReadyToUpdate" class="btn btn-lg btn-success">{{ $t('Button.Update') }}</button>
-                </div>
-            </div>
-        </footer>
     </div>
+    <footer class="footer">
+        <div class="row">
+            <div class="col-xs-2 col-xs-offset-10">
+                <button :disabled="!isReadyToUpdate" class="btn btn-lg btn-success">{{ $t('Button.Update') }}</button>
+            </div>
+        </div>
+    </footer>
     <modal-about :show.sync="isShowAbout"></modal-about>
     <modal-setting
         :show.sync="isShowSetting"

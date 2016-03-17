@@ -1,6 +1,7 @@
 'use strict'
 
 import Vue from 'vue'
+import VueTables from 'vue-tables'
 import 'vue-animate-css'
 import './style/animate.css'
 import './style/app.less'
@@ -12,8 +13,11 @@ import locales from './library/i18n.js'
 import VueI18n from 'vue-i18n'
 import setting from './library/setting.js'
 import BigFoot from './provider/bigFoot.js'
+import AddOn from './library/addon.js'
 import axios from 'axios'
 import * as xml2js from 'xml2js'
+
+Vue.use(VueTables.client)
 
 Vue.use(VueI18n, {
     lang: 'en',
@@ -31,16 +35,6 @@ new Vue({
         ModalSetting
     },
     methods: {},
-    data: {
-        isShowAbout: false,
-        isShowSetting: false,
-        isReadyToUpdate: false,
-        workerCount: setting.settings.workerCount,
-        wowPath: setting.settings.wowPath,
-        autoUpdate: setting.settings.autoUpdate,
-        columns: ['Name', 'Title', 'Desc', 'Author', 'Version'],
-        addons: [],
-    },
     ready() {
         let progress = (size, total) => {
             console.log(`Progress: size: ${size} - total: ${total}`)
@@ -51,13 +45,29 @@ new Vue({
                 this.isReadyToUpdate = true
                 xml2js.parseString(resp.data, (err, ret) => {
                     ret.AddOns.AddOn.forEach((value, index) => {
-                        this.addons.push(value.$)
+                        this.addons.push(new AddOn(
+                            index,
+                            value.$.name,
+                            value.$['Title-zhCN'],
+                            value.$['Notes-zhCN'],
+                            value.$.Author,
+                            value.$.Version
+                        ).plain())
                     })
                 })
             }
         }).catch(err => {
             console.log(err)
         })
-    }
+    },
+    data: {
+        isShowAbout: false,
+        isShowSetting: false,
+        isReadyToUpdate: false,
+        workerCount: setting.settings.workerCount,
+        wowPath: setting.settings.wowPath,
+        autoUpdate: setting.settings.autoUpdate,
+        addons: [],
+    },
 })
 

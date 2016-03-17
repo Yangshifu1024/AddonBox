@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-inverse titlebar navbar-fixed-top">
+    <div class="navbar navbar-inverse titlebar navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
                 <div class="navbar-brand">{{ $t('Label.PluginBox') }}</div>
@@ -25,7 +25,7 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </div>
 </template>
 
 <script>

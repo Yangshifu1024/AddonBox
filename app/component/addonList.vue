@@ -1,24 +1,35 @@
 <template>
-    <table class="table table-hover">
-        <thead><th v-for="column in columns">{{ column }}</th></thead>
-        <tbody>
-            <tr v-for="addon in data">
-                <td>{{ addon.name }}</td>
-                <td>{{ addon.Title-zhCN }}</td>
-                <td>{{ addon.Notes-zhCN }}</td>
-                <td>{{ addon.Author }}</td>
-                <td>{{ addon.Version }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <v-client-table :data.sync="data" :options.sync="options"></v-client-table>
 </template>
 
 <script>
     export default {
         props: {
-            data: Array,
-            columns: Array,
+            data: {
+                type: Array,
+                twoWay: true
+            },
             filterKey: String
         },
+        data () {
+            return {
+                options: {
+                    filterByColumn: false,
+                    columns:['name', 'title', 'version'],
+                    headings: {
+                        name: 'Name',
+                        title: 'Title',
+                        uninstall: '',
+                    },
+                    filterByColumn: false,
+                    pagination: {
+                        dropdown: false
+                    },
+                    templates: {
+                        uninstall: "<a class='btn btn-danger'><span class='glyphicon glyphicon-remove'></span></a>"
+                    }
+                },
+            }
+        }
     }
 </script>
