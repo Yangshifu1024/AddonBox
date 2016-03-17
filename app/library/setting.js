@@ -22,8 +22,13 @@ class Setting {
     load() {
         let stat = fs.existsSync(this.file)
         if (stat) {
-            let data = fs.readFileSync(this.file)
-            this.settings = JSON.parse(data.toString())
+            if (Object.keys(this.settings).length !== 0) {
+                console.log('Already loadded.')
+                console.log(this.settings)
+            } else {
+                let data = fs.readFileSync(this.file)
+                this.settings = JSON.parse(data.toString())
+            }
         } else {
             this.init()
         }
