@@ -91,11 +91,6 @@
                 })
             }
         },
-        ready() {
-            if (!this.workerCount) {
-                this.workerCount = 10
-            }
-        },
         components: {
             modal,
             'v-select': select,

@@ -10,6 +10,7 @@ import ModalAbout from './component/mdlAbout.vue'
 import ModalSetting from './component/mdlSetting.vue'
 import locales from './library/i18n.js'
 import VueI18n from 'vue-i18n'
+import setting from './library/setting.js'
 
 Vue.use(VueI18n, {
     lang: 'en',
@@ -30,19 +31,22 @@ new Vue({
     data: {
         isShowAbout: false,
         isShowSetting: false,
-        workerCount: 5,
-        wowPath: null,
-        autoUpdate: false,
+        workerCount: setting.settings.workerCount,
+        wowPath: setting.settings.wowPath,
+        autoUpdate: setting.settings.autoUpdate,
     },
     ready() {
         this.$watch('workerCount', (val) => {
-            console.log('workerCount: ' + val)
+            setting.settings.workerCount = val
+            setting.save()
         })
         this.$watch('wowPath', (val) => {
-            console.log('wowPath: ' + val)
+            setting.settings.wowPath = val
+            setting.save()
         })
         this.$watch('autoUpdate', (val) => {
-            console.log('autoUpdate: ' + val)
+            setting.settings.autoUpdate = val
+            setting.save()
         })
     }
 })
