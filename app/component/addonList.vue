@@ -16,7 +16,17 @@
                 options: {
                     filterByColumn: false,
                     columns:['name', 'title', 'version'],
+                    texts: {
+                        count: '{count} Plugins',
+                        filter: 'Search plugin:',
+                        filterPlaceholder: 'Key',
+                        limit: 'Per-Page:',
+                        noResults: 'No results',
+                        page: 'Page:',
+                        filterBy: 'Filter by {column}'
+                    },
                     headings: {
+                        select: '',
                         name: 'Name',
                         title: 'Title',
                         uninstall: '',
@@ -26,6 +36,7 @@
                         dropdown: false
                     },
                     templates: {
+                        select: "<input type='checkbox'/>",
                         uninstall: "<a class='btn btn-danger'><span class='glyphicon glyphicon-remove'></span></a>"
                     }
                 },
