@@ -17,16 +17,15 @@ class Setting {
             autoUpdate: false,
             workerCount: 5
         }
-        let mkRet = fs.mkdirSync(workPath)
         fs.writeFileSync(this.file, JSON.stringify(this.settings))
     }
     load() {
-        let stat = fs.statSync(this.file)
+        let stat = fs.existsSync(this.file)
         if (stat) {
             let data = fs.readFileSync(this.file)
             this.settings = JSON.parse(data.toString())
         } else {
-            console.log('Error')
+            this.init()
         }
     }
     save() {
