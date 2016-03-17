@@ -35,19 +35,5 @@ new Vue({
         wowPath: setting.settings.wowPath,
         autoUpdate: setting.settings.autoUpdate,
     },
-    ready() {
-        this.$watch('workerCount', (val) => {
-            setting.settings.workerCount = val
-            setting.save()
-        })
-        this.$watch('wowPath', (val) => {
-            setting.settings.wowPath = val
-            setting.save()
-        })
-        this.$watch('autoUpdate', (val) => {
-            setting.settings.autoUpdate = val
-            setting.save()
-        })
-    }
 })
 

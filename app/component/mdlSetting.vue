@@ -56,6 +56,7 @@
     const remote = electron.remote
     const app = remote.app
     const dialog = remote.dialog
+    import setting from '../library/setting.js'
 
     export default {
         props: {
@@ -95,6 +96,20 @@
             modal,
             'v-select': select,
             'v-option': option
+        },
+        ready() {
+            this.$watch('workerCount', (val) => {
+                setting.settings.workerCount = val
+                setting.save()
+            })
+            this.$watch('wowPath', (val) => {
+                setting.settings.wowPath = val
+                setting.save()
+            })
+            this.$watch('autoUpdate', (val) => {
+                setting.settings.autoUpdate = val
+                setting.save()
+            })
         }
     }
 
