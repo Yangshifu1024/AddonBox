@@ -1,5 +1,5 @@
 <template>
-    <table class="table table-hover fixed-table header-fixed">
+    <table class="table table-hover">
         <thead><th v-for="column in columns">{{ column }}</th></thead>
         <tbody>
             <tr v-for="addon in data">

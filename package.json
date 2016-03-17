@@ -57,6 +57,7 @@
     "vue-loader": "^8.2.0",
     "vue-strap": "^1.0.7",
     "vue-style-loader": "^1.0.0",
+    "vue-tables": "^1.1.6",
     "webpack": "^1.12.14",
     "xml2js": "^0.4.16"
   }

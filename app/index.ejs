@@ -8,9 +8,11 @@
 </head>
 
 <body>
-    <nav-bar :is-show-about.sync="isShowAbout" :is-show-setting.sync="isShowSetting"></nav-bar>
-    <addon-list :data="addons" :columns="columns"></addon-list>
     <div class="container-fluid">
+        <nav-bar :is-show-about.sync="isShowAbout" :is-show-setting.sync="isShowSetting"></nav-bar>
+        <div class="row">
+            <addon-list :data="addons" :columns="columns"></addon-list>
+        </div>
         <footer class="footer">
             <div class="row">
                 <div class="col-xs-2 col-xs-offset-10">
