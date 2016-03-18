@@ -8,7 +8,7 @@
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <form class="navbar-form navbar-left" role="search">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="{{ $t('Label.Search') }}" v-model="filterKey">
+                        <input type="text" class="form-control" placeholder="{{ $t('Label.Search') }}" v-model="query">
                     </div>
                 </form>
                 <ul class="nav navbar-nav navbar-right">
@@ -41,8 +41,7 @@
                 type: Boolean,
                 twoWay: true
             },
-            filterKey: {
-                type: String,
+            query: {
                 twoWay: true
             }
         },

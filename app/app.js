@@ -68,6 +68,7 @@ new Vue({
         wowPath: setting.settings.wowPath,
         autoUpdate: setting.settings.autoUpdate,
         addons: [],
+        query: null,
     },
 })
 

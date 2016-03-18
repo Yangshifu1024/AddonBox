@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <nav-bar :is-show-about.sync="isShowAbout" :is-show-setting.sync="isShowSetting"></nav-bar>
+    <nav-bar :query.sync="query" :is-show-about.sync="isShowAbout" :is-show-setting.sync="isShowSetting"></nav-bar>
     <div class="container-fluid" style="margin-top: 105px; width: 95%;">
         <div class="row">
             <addon-list :data.sync="addons"></addon-list>
