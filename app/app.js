@@ -34,7 +34,14 @@ new Vue({
         progressbar,
         alert,
     },
-    methods: {},
+    methods: {
+        showAlert: (style, title, content) => {
+            this.alerter.style = style
+            this.alerter.title = title
+            this.alerter.content = content
+            this.alerter.show = true
+        }
+    },
     ready() {
         let progress = (size, total) => {
             console.log(`Progress: size: ${size} - total: ${total}`)
@@ -71,8 +78,8 @@ new Vue({
         addons: [],
         query: null,
         progress: 50,
-        alert: {
-            show: true,
+        alerter: {
+            show: false,
             style: 'warning',
             title: 'warning',
             content: 'warning'

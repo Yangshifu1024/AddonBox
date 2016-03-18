@@ -27,10 +27,10 @@
             </div>
         </div>
     </footer>
-    <alert :show.sync="alert.show" :duration="3000" :type="alert.style" width="300px" placement="top-right" dismissable>
+    <alert :show.sync="alerter.show" :duration="3000" :type="alerter.style" width="300px" placement="top-right" dismissable>
         <span class="icon-info-circled alert-icon-float-left"></span>
-        <strong>{{ alert.title }}</strong>
-        <p>{{ alert.content }}</p>
+        <strong>{{ alerter.title }}</strong>
+        <p>{{ alerter.content }}</p>
     </alert>
     <modal-about :show.sync="isShowAbout"></modal-about>
     <modal-setting :show.sync="isShowSetting" :worker-count.sync="workerCount" :auto-update.sync="autoUpdate" :wow-path.sync="wowPath">
