@@ -11,18 +11,25 @@
                 type: Array,
                 twoWay: true
             },
-            filterKey: String
+            query: {
+                twoWay: true
+            }
         },
         data () {
             return {
                 options: {
                     tableName: 'Plugins',
+                    perPage: 8,
                     skin: 'table-striped table-bordered table-hover',
                     filterByColumn: false,
                     columns: ['name', 'title', 'version'],
                     editableColumns: [],
                     checkboxes: true,
                     checkboxesName: 'Plugin',
+                    components: {
+                        limit: false,
+                        count: false,
+                    },
                     texts: {
                         count: '{count} Plugins',
                         filter: 'Search plugin:',
