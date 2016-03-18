@@ -1,7 +1,6 @@
 'use strict'
 
 import Vue from 'vue'
-import VueTables from 'vue-tables'
 import 'vue-animate-css'
 import './style/animate.css'
 import './style/app.less'
@@ -16,8 +15,6 @@ import BigFoot from './provider/bigFoot.js'
 import AddOn from './library/addon.js'
 import axios from 'axios'
 import * as xml2js from 'xml2js'
-
-Vue.use(VueTables.client)
 
 Vue.use(VueI18n, {
     lang: 'en',
@@ -67,6 +64,7 @@ new Vue({
         workerCount: setting.settings.workerCount,
         wowPath: setting.settings.wowPath,
         autoUpdate: setting.settings.autoUpdate,
+        columns: [Vue.t('Plugin.Labels.Name'), Vue.t('Plugin.Labels.Title'), Vue.t('Plugin.Labels.Version')],
         addons: [],
         query: null,
     },

@@ -22,5 +22,12 @@
         "HelpConcurrency": "Errors may occur when it set too high.",
         "ErrorDirChoose": "You must choose a valid path to WOW!"
       }
+    },
+    "Plugin": {
+      "Labels": {
+        "Name": "Plugin Name",
+        "Title": "Plugin Title",
+        "Version": "Plugin Version"
+      }
     }
 }

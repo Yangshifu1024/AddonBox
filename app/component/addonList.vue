@@ -1,58 +1,34 @@
 <template>
     <div class="plugins-container">
-        <v-client-table :data.sync="data" :options.sync="options"></v-client-table>
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th v-for="column in columns">{{ column }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="addon in addons | filterBy query">
+                    <td>{{ addon.name }}</td>
+                    <td>{{ addon.title }}</td>
+                    <td>{{ addon.version }}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </template>
 
 <script>
     export default {
         props: {
-            data: {
+            addons: {
                 type: Array,
-                twoWay: true
             },
             query: {
-                twoWay: true
+                type: String
+            },
+            columns: {
+                type: Array
             }
         },
-        data () {
-            return {
-                options: {
-                    tableName: 'Plugins',
-                    perPage: 8,
-                    skin: 'table-striped table-bordered table-hover',
-                    filterByColumn: false,
-                    columns: ['name', 'title', 'version'],
-                    editableColumns: [],
-                    checkboxes: true,
-                    checkboxesName: 'Plugin',
-                    components: {
-                        limit: false,
-                        count: false,
-                    },
-                    texts: {
-                        count: '{count} Plugins',
-                        filter: 'Search plugin:',
-                        filterPlaceholder: 'Key',
-                        limit: 'Per-Page:',
-                        noResults: 'No results',
-                        page: 'Page:',
-                        filterBy: 'Filter by {column}'
-                    },
-                    headings: {
-                        name: 'Name',
-                        title: 'Title',
-                        uninstall: '',
-                    },
-                    filterByColumn: false,
-                    pagination: {
-                        dropdown: false
-                    },
-                    templates: {
-                        uninstall: "<a class='btn btn-danger'><span class='glyphicon glyphicon-remove'></span></a>"
-                    }
-                },
-            }
-        }
     }
 </script>
