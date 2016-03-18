@@ -16,28 +16,25 @@
     </div>
     <footer class="footer">
         <div class="row">
-			<div class="col-xs-10">
-				<div class="progress">
-					<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;" style="min-width: 2em">
-						60%
-					</div>
-				</div>
-				<p>i am some text</p>
-			</div>
+            <div class="col-xs-10">
+                <div class="progress">
+                    <progressbar :now="progress" label animated></progressbar>
+                </div>
+                <p>i am some text</p>
+            </div>
             <div class="col-xs-2">
                 <button :disabled="!isReadyToUpdate" class="btn btn-lg btn-success">{{ $t('Button.Update') }}</button>
             </div>
         </div>
     </footer>
+    <alert :show.sync="alert.show" :duration="3000" :type="alert.style" width="300px" placement="top-right" dismissable>
+        <span class="icon-info-circled alert-icon-float-left"></span>
+        <strong>{{ alert.title }}</strong>
+        <p>{{ alert.content }}</p>
+    </alert>
     <modal-about :show.sync="isShowAbout"></modal-about>
-    <modal-setting
-        :show.sync="isShowSetting"
-        :worker-count.sync="workerCount"
-        :auto-update.sync="autoUpdate"
-        :wow-path.sync="wowPath"
-        >
+    <modal-setting :show.sync="isShowSetting" :worker-count.sync="workerCount" :auto-update.sync="autoUpdate" :wow-path.sync="wowPath">
     </modal-setting>
 </body>
 
 </html>
-

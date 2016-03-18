@@ -15,6 +15,7 @@ import BigFoot from './provider/bigFoot.js'
 import AddOn from './library/addon.js'
 import axios from 'axios'
 import * as xml2js from 'xml2js'
+import { progressbar, alert } from 'vue-strap'
 
 Vue.use(VueI18n, {
     lang: 'en',
@@ -29,7 +30,9 @@ new Vue({
         NavBar,
         AddonList,
         ModalAbout,
-        ModalSetting
+        ModalSetting,
+        progressbar,
+        alert,
     },
     methods: {},
     ready() {
@@ -67,6 +70,13 @@ new Vue({
         columns: [Vue.t('Addon.Labels.Name'), Vue.t('Addon.Labels.Title'), Vue.t('Addon.Labels.Version')],
         addons: [],
         query: null,
+        progress: 50,
+        alert: {
+            show: true,
+            style: 'warning',
+            title: 'warning',
+            content: 'warning'
+        }
     },
 })
 
