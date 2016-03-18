@@ -13,7 +13,7 @@ export default class Addon {
         return {
             "id": this.id,
             "name": this.name,
-            "title": this.title,
+            "title": this.title.replace('<0a', '[').replace('0a>', ']'),
             "desc": this.desc,
             "author": this.author,
             "version": this.version,
