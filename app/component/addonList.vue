@@ -1,5 +1,7 @@
 <template>
-    <v-client-table :data.sync="data" :options.sync="options"></v-client-table>
+    <div class="plugins-container">
+        <v-client-table :data.sync="data" :options.sync="options"></v-client-table>
+    </div>
 </template>
 
 <script>
