@@ -45,7 +45,25 @@ new Vue({
     },
     ready() {
         progress(request(BigFoot.indexFileUrl, (err, resp, body) => {
-            console.log(body)
+            if (err) {
+                console.log(err)
+            }
+            if (resp.statusCode !== 200) {
+                console.log(resp.statusCode)
+            }
+            this.isReadyToUpdate = true
+            xml2js.parseString(body, (err, ret) => {
+                ret.AddOns.AddOn.forEach((value, index) => {
+                    this.addons.push(new AddOn(
+                        index,
+                        value.$.name,
+                        value.$['Title-zhCN'],
+                        value.$['Notes-zhCN'],
+                        value.$.Author,
+                        value.$.Version
+                    ).plain())
+                })
+            })
         }), {
             throttle: 0
         }).on('progress', (e) => {
