@@ -22,5 +22,12 @@
         "HelpConcurrency": "设置过高可能会发生错误。",
         "ErrorDirChoose": "必须选择一个有效的 WOW 目录！"
       }
+    },
+    "Addon": {
+      "Labels": {
+        "Name": "插件名",
+        "Title": "标题",
+        "Version": "版本"
+      }
     }
 }
