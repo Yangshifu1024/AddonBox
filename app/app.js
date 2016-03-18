@@ -44,14 +44,6 @@ new Vue({
         }
     },
     ready() {
-        // let progress = (e) => {
-            // console.log(e)
-            // // console.log(`Progress: size: ${size} - total: ${total}`)
-        // }
-        let handler = {}
-        handler.on = (e) => {
-            console.log(e)
-        }
         progress(request(BigFoot.indexFileUrl, (err, resp, body) => {
             console.log(body)
         }), {
