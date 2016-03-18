@@ -2,7 +2,7 @@
     <div class="navbar navbar-inverse titlebar navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
-                <div class="navbar-brand">{{ $t('Label.PluginBox') }}</div>
+                <div class="navbar-brand">{{ $t('Label.AddonBox') }}</div>
             </div>
 
             <div class="collapse navbar-collapse" id="navbar-collapse">

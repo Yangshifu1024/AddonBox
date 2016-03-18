@@ -64,7 +64,7 @@ new Vue({
         workerCount: setting.settings.workerCount,
         wowPath: setting.settings.wowPath,
         autoUpdate: setting.settings.autoUpdate,
-        columns: [Vue.t('Plugin.Labels.Name'), Vue.t('Plugin.Labels.Title'), Vue.t('Plugin.Labels.Version')],
+        columns: [Vue.t('Addon.Labels.Name'), Vue.t('Addon.Labels.Title'), Vue.t('Addon.Labels.Version')],
         addons: [],
         query: null,
     },

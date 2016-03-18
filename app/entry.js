@@ -10,7 +10,7 @@ let mainWindow
 
 let template = [
     {
-        label: 'PluginBox',
+        label: 'AddonBox',
         submenu: [
             {
                 label: 'Quit',

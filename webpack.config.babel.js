@@ -68,7 +68,7 @@ export default {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'PluginBox',
+            title: 'AddonBox',
             template: './app/index.ejs',
             excludeChunks: ['entry']
         }),

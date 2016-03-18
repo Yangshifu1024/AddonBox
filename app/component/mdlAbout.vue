@@ -1,7 +1,7 @@
 <template>
     <modal :show.sync="show" effect="zoom">
         <div slot="modal-header" class="modal-header">
-            <h4 class="modal-title">{{ $t('Label.About' )}} {{ $t('Label.PluginBox') }}</h4>
+            <h4 class="modal-title">{{ $t('Label.About' )}} {{ $t('Label.AddonBox') }}</h4>
         </div>
         <div slot="modal-body" class="modal-body">
             <div class="row">

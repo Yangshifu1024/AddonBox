@@ -1,5 +1,5 @@
 <template>
-    <div class="plugins-container">
+    <div class="addons-container">
         <table class="table table-striped table-bordered table-hover">
             <thead>
                 <tr>

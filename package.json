@@ -1,7 +1,7 @@
 {
-  "name": "PluginBox",
+  "name": "AddonBox",
   "version": "1.0.0",
-  "description": "Plugin manager",
+  "description": "Wow addon manager for Chinese",
   "main": "entry.js",
   "babel": {
     "presets": [
@@ -16,10 +16,10 @@
   "author": "Frank Yang <codebear4@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/codebearx/PluginBox"
+    "url": "https://github.com/codebearx/AddonBox"
   },
   "bugs": {
-    "url": "https://github.com/codebearx/PluginBox/issues"
+    "url": "https://github.com/codebearx/AddonBox/issues"
   },
   "license": "MIT",
   "devDependencies": {

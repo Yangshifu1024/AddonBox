@@ -1,7 +1,7 @@
 {
     "Label": {
       "About": "About",
-      "PluginBox": "PluginBox",
+      "AddonBox": "AddonBox",
       "Search": "Search",
       "Setting": "Setting",
       "Warning": "Warning"
@@ -23,11 +23,11 @@
         "ErrorDirChoose": "You must choose a valid path to WOW!"
       }
     },
-    "Plugin": {
+    "Addon": {
       "Labels": {
-        "Name": "Plugin Name",
-        "Title": "Plugin Title",
-        "Version": "Plugin Version"
+        "Name": "Addon Name",
+        "Title": "Addon Title",
+        "Version": "Addon Version"
       }
     }
 }

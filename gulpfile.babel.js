@@ -31,7 +31,7 @@ gulp.task('webpack', () => {
 
 gulp.task('pack', ['clean', 'copy', 'webpack'], () => {
     let opts = {
-        name: 'PluginBox',
+        name: 'AddonBox',
         arch: 'x64',
         dir: './dist',
         out: './build',
