@@ -14,9 +14,13 @@
         data () {
             return {
                 options: {
+                    tableName: 'Plugins',
                     skin: 'table-striped table-bordered table-hover',
                     filterByColumn: false,
-                    columns:['name', 'title', 'version'],
+                    columns: ['name', 'title', 'version'],
+                    editableColumns: [],
+                    checkboxes: true,
+                    checkboxesName: 'Plugin',
                     texts: {
                         count: '{count} Plugins',
                         filter: 'Search plugin:',
@@ -27,7 +31,6 @@
                         filterBy: 'Filter by {column}'
                     },
                     headings: {
-                        select: '',
                         name: 'Name',
                         title: 'Title',
                         uninstall: '',
@@ -37,7 +40,6 @@
                         dropdown: false
                     },
                     templates: {
-                        select: "<input type='checkbox'/>",
                         uninstall: "<a class='btn btn-danger'><span class='glyphicon glyphicon-remove'></span></a>"
                     }
                 },
