@@ -7,6 +7,18 @@
             <div class="row">
                 <div class="col-xs-6 col-xs-offset-3 centered">
                     <img v-animation animate="tada" src="../assets/avatar_2016.jpg" width="155" height="155" />
+                    <div class="panel panel-default" style="margin-top:5px;">
+                      <div class="panel-body">
+                        <div class="btn-group btn-group-justified">
+                          <a href="#" @click="visitGithub()" class="btn btn-warning">
+                            {{ $t('Modals.About.Github') }}
+                          </a>
+                          <a href="#" @click="visitBlog()" class="btn btn-default">
+                            {{ $t('Modals.About.Blog') }}
+                          </a>
+                        </div>
+                      </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -18,6 +30,9 @@
 
 <script>
     import {modal} from 'vue-strap'
+    import electron from 'electron'
+    const remote = electron.remote
+    const shell = remote.shell
 
     export default {
         props: {
@@ -29,6 +44,12 @@
         methods: {
             close() {
                 this.show = false
+            },
+            visitGithub() {
+                shell.openExternal('https://github.com/iFrankYang/AddonBox')
+            },
+            visitBlog() {
+                shell.openExternal('https://codebear.xyz')
             }
         },
         ready() {

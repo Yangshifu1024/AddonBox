@@ -19,7 +19,7 @@ import * as xml2js from 'xml2js'
 import { progressbar, alert } from 'vue-strap'
 
 Vue.use(VueI18n, {
-    lang: 'en',
+    lang: 'cn',
     locales: locales
 })
 

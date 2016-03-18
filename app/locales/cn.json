@@ -21,6 +21,10 @@
         "HelpDirChoose": "选择 WOW 目录。",
         "HelpConcurrency": "设置过高可能会发生错误。",
         "ErrorDirChoose": "必须选择一个有效的 WOW 目录！"
+      },
+      "About": {
+        "Github": "项目主页",
+        "Blog": "个人博客"
       }
     },
     "Addon": {

@@ -21,6 +21,10 @@
         "HelpDirChoose": "Choose your WOW path.",
         "HelpConcurrency": "Errors may occur when it set too high.",
         "ErrorDirChoose": "You must choose a valid path to WOW!"
+      },
+      "About": {
+        "Github": "Github",
+        "Blog": "Blog"
       }
     },
     "Addon": {
