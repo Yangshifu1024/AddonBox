@@ -30,6 +30,7 @@ gulp.task('webpack', () => {
 })
 
 gulp.task('pack', ['clean', 'copy', 'webpack'], () => {
+    process.env.NODE_ENV = 'production'
     let opts = {
         name: 'AddonBox',
         arch: 'x64',

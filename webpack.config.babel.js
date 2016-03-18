@@ -1,7 +1,7 @@
 import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
-export default {
+let config = {
     target: "electron",
     node: {
         __dirname: false
@@ -83,3 +83,13 @@ export default {
         })
     ]
 }
+
+if (process.env.NODE_ENV === 'production') {
+    config.plugins.push(new webpack.optimize.UglifyJsPlugin({
+        compress: {
+            warnings: false
+        }
+    }))
+}
+
+export default config
