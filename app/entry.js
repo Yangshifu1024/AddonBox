@@ -49,7 +49,7 @@ function createWindow() {
         height: 720,
         titleBarStyle: 'hidden'
     })
-    mainWindow.openDevTools()
+
     mainWindow.loadURL('file://' + __dirname + '/index.html')
 
     mainWindow.on('closed', () => {
