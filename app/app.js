@@ -43,13 +43,13 @@ let app = new Vue({
     },
     methods: {
         showAlert: (style, title, content) => {
-            this.alerter.style = style
-            this.alerter.title = title
-            this.alerter.content = content
-            this.alerter.show = true
+            app.alerter.style = style
+            app.alerter.title = title
+            app.alerter.content = content
+            app.alerter.show = true
         },
         update: () => {
-            if (app.queue) {
+            if (app.queue && !app.queue.idle()) {
                 app.queue.kill()
                 app.labelBtnUpdate = app.$t('Button.Update')
                 app.progress = 0
@@ -69,9 +69,15 @@ let app = new Vue({
                 let zipFile = path.resolve(addonPath, file.path + '.z')
                 let originFile = path.resolve(addonPath, file.path)
                 let req = request.defaults({gzip: true})
+                let targetDir = path.dirname(zipFile)
+                if (!fs.existsSync(targetDir)) {
+                    mkdirp.sync(targetDir)
+                }
                 req(file.url, (err, resp, body) => {
-                    extract(zipFile, {dir: addonPath}, (err) => {
-                        fs.unlink(zipFile)
+                    extract(zipFile, {dir: targetDir}, (err) => {
+                        if(fs.existsSync(zipFile)) {
+                            fs.unlink(zipFile)
+                        }
                         callback(err)
                     })
                 }).on('data', (data) => {
