@@ -23,6 +23,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "appdmg": "^0.3.6",
     "async": "^2.0.0-rc.1",
     "babel-eslint": "^5.0.0",
     "babel-loader": "^6.2.4",

@@ -4,6 +4,7 @@ import gutil from 'gulp-util'
 import del from 'del'
 import webpack from 'webpack'
 import packager from 'electron-packager'
+import appdmg from 'appdmg'
 import webpackConfig from './webpack.config.babel.js'
 
 gulp.task('clean', () => {
@@ -54,6 +55,24 @@ gulp.task('dist', ['clean', 'copy', 'webpack'])
 gulp.task('watch', ['dist'], () => {
     gulp.watch(['./app/entry.js', './package.json', './app/assets/**/*.*'], ['copy'])
     gulp.watch(['./app/**/*.js', './app/**/*.ejs', './app/**/*.vue', './app/**/*.less', './app/**/*.json'], ['webpack'])
+})
+
+gulp.task('dmg', () => {
+    del('./build/AddonBox-darwin-x64/AddonBox.dmg')
+    appdmg({
+        target: './build/AddonBox-darwin-x64/AddonBox.dmg',
+        basepath: './build/AddonBox-darwin-x64',
+        specification: {
+            "title": "AddonBox",
+            "icon": '../../app/assets/logo.icns',
+            "background": '../../app/assets/background.png',
+            "icon-size": 80,
+            "contents": [
+                { "x": 348, "y": 170, "type": "link", "path": "/Applications" },
+                { "x": 180, "y": 170, "type": "file", "path": "AddonBox.app" },
+            ]
+        }
+    })
 })
 
 gulp.task('default', ['watch'])
