@@ -10,7 +10,8 @@
       "Ok": "确定",
       "Close": "关闭",
       "Update": "更新",
-      "Choose": "选择"
+      "Choose": "选择",
+      "Cancel": "取消"
     },
     "Modals": {
       "Setting": {
@@ -33,5 +34,10 @@
         "Title": "标题",
         "Version": "版本"
       }
+    },
+    "Status": {
+      "ReadyToUpdate": "准备更新。",
+      "Done": "完成。",
+      "WaitForFileList": "正在获取更新文件..."
     }
 }

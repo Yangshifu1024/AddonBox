@@ -10,7 +10,8 @@
       "Ok": "Ok",
       "Close": "Close",
       "Update": "Update",
-      "Choose": "Choose"
+      "Choose": "Choose",
+      "Cancel": "Cancel"
     },
     "Modals": {
       "Setting": {
@@ -33,5 +34,10 @@
         "Title": "Addon Title",
         "Version": "Addon Version"
       }
+    },
+    "Status": {
+      "ReadyToUpdate": "Ready to update.",
+      "Done": "Done.",
+      "WaitForFileList": "Fetching update index..."
     }
 }

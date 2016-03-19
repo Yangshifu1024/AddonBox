@@ -1,9 +1,12 @@
 'use strict'
 
 export default class AddonFile {
-    constructor(path, sum) {
-        this.path = path
-        this.sum = sum
+    constructor(addonName, baseUrl, filePath, fileSum) {
+        this.addonName = addonName
+        this.path = filePath// .replace(/\\/g, '/')
+        let tmpUrl = baseUrl + "Interface/AddOns/" + addonName + '/' + filePath + '.z'
+        this.url = tmpUrl.replace(/\\/g, '/')
+        this.sum = fileSum
     }
 
     validate() {
