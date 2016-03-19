@@ -89,6 +89,7 @@ let app = new Vue({
 
             app.queue.drain = () => {
                 app.status = app.$t('Status.Done')
+                app.labelBtnUpdate = app.$t('Button.Update')
             }
 
             app.addonFiles.forEach((file, index) => {
