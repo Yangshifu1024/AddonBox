@@ -1,7 +1,7 @@
 # AddonBox
 [![](https://img.shields.io/badge/Mac-Only-orange.svg)]()
 [![](https://img.shields.io/badge/Tested%20on-OSX%2010.11.4-green.svg)]()
-[![GitHub release](https://img.shields.io/github/release/iFrankYang/AddonBox.svg)](https://github.com/iFrankYang/AddonBox/releases)
+[![GitHub release](https://img.shields.io/github/release/codebear4/AddonBox.svg)](https://github.com/iFrankYang/AddonBox/releases)
 
 中国 Mac 用户的 WoW 插件盒子
 
