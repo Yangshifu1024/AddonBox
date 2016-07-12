@@ -1,4 +1,5 @@
 # AddonBox
+Swittched to Gitlab [FrankYang](https://gitlab.com/u/FrankYang)
 [![](https://img.shields.io/badge/Mac-Only-orange.svg)]()
 [![](https://img.shields.io/badge/Tested%20on-OSX%2010.11.4-green.svg)]()
 [![GitHub release](https://img.shields.io/github/release/codebear4/AddonBox.svg)](https://github.com/codebear4/AddonBox/releases)
